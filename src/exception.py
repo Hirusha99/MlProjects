@@ -3,7 +3,7 @@ import sys -> any exception basically getting control sys library will automatic
 in this contain custom exception for our entire project
 '''
 import sys
-import logging
+from logger import logging
 
 
 def error_message_detail(error, error_details: sys):
@@ -26,3 +26,12 @@ class CustomException(Exception):
 
     def __str__(self) -> str:
         return self.error_message
+
+
+if __name__ == "__main__":
+
+    try:
+        a = 1/0
+    except Exception as e:
+        logging.info("Logging has started")
+        raise CustomException(e, sys)from e
