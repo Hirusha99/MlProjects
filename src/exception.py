@@ -3,7 +3,7 @@ import sys -> any exception basically getting control sys library will automatic
 in this contain custom exception for our entire project
 '''
 import sys
-from logger import logging
+from src.logger import logging
 
 
 def error_message_detail(error, error_details: sys):
