@@ -3,7 +3,6 @@ from dataclasses import dataclass
 
 import numpy as np
 import pandas as pd
-from sklearn import preprocessing
 from sklearn.compose import ColumnTransformer # to make pipeline
 from sklearn.impute import SimpleImputer # for missing values
 from sklearn.pipeline import Pipeline
