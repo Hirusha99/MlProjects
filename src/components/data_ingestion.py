@@ -7,14 +7,15 @@ import pandas as pd
 from dataclasses import dataclass
 from sklearn.model_selection import train_test_split
 import os
-from src.components import data_transformation
-from src.logger import logging
-from src.exception import CustomException
+from MlProjects.src.components import data_transformation
+from MlProjects.src.logger import logging
+from MlProjects.src.exception import CustomException
 
-from src.components.data_transformation import DataTransformation
-from src.components.data_transformation import DataTransformationConfig
-from src.components.model_trainer import ModelTrainerConfig
-from src.components.model_trainer import ModelTrainer
+
+from MlProjects.src.components.data_transformation import DataTransformation
+from MlProjects.src.components.data_transformation import DataTransformationConfig
+from MlProjects.src.components.model_trainer import ModelTrainerConfig
+from MlProjects.src.components.model_trainer import ModelTrainer
 
 @dataclass
 class DataIngestionConfig:  # these are the inputs that i provide data ingestion components, now data ingestion know where to save data
@@ -22,7 +23,7 @@ class DataIngestionConfig:  # these are the inputs that i provide data ingestion
     test_data_path: str = os.path.join("MlProjects", "artifact", "test.csv")
     raw_data_path: str = os.path.join("MlProjects", "artifact", "data.csv")
 
-
+data_path = "MlProjects\\notebook\\data\\stud.csv"
 class DataIngestion:
     def __init__(self):
         self.ingestion_config = DataIngestionConfig()
@@ -30,7 +31,7 @@ class DataIngestion:
     def initiate_data_ingestion(self):  # read from database
         logging.info("entered the data ingestion method or component")
         try:
-            df = pd.read_csv('MlProjects\\notebook\\data\\stud.csv')
+            df = pd.read_csv(data_path)
             logging.info('read the dataset as dataframe')
 
             os.makedirs(os.path.dirname(

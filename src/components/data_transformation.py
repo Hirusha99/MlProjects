@@ -6,11 +6,12 @@ import pandas as pd
 from sklearn.compose import ColumnTransformer # to make pipeline
 from sklearn.impute import SimpleImputer # for missing values
 from sklearn.pipeline import Pipeline
+
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
-from src.exception import CustomException
-from src.logger import logging
-from src.utils import save_object
+from MlProjects.src.exception import CustomException
+from MlProjects.src.logger import logging
+from MlProjects.src.utils import save_object
 import os
 
 @dataclass
